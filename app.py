@@ -40,4 +40,4 @@ if st.button("Dërgo Pyetjen"):
         st.warning("Ju lutem shkruani një pyetje para se të klikoni butonin.")
 
 st.divider()
-st.caption("Punuar nga Grupi i Studentëve - Projekti Cloud Computing 2026")
+st.caption("Punuar nga Dionesa & Erolinda - Projekti Cloud Computing 2026")
