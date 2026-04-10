@@ -15,7 +15,7 @@ if st.button("Dërgo Pyetjen"):
         with st.spinner("Po kërkoj në serverat Cloud..."):
             try:
                 # Ky është emri që kërkon versioni v1beta
-                model = genai.GenerativeModel('model = genai.GenerativeModel('models/gemini-1.0-pro')')
+                model = genai.GenerativeModel('models/gemini-1.0-pro'))
                 pergjigja = model.generate_content(pyetja)
                 st.success("Përgjigja:")
                 st.write(pergjigja.text)
