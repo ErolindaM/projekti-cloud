@@ -14,17 +14,17 @@ if st.button("Dërgo Pyetjen"):
     if pyetja:
         with st.spinner("Po kërkoj në serverat Cloud..."):
             try:
-                # Provon modelin më stabil
-                model = genai.GenerativeModel('gemini-1.5-flash')
+                # Ky është emri që kërkon versioni v1beta
+                model = genai.GenerativeModel('gemini-1.5-flash-latest')
                 pergjigja = model.generate_content(pyetja)
                 st.success("Përgjigja:")
                 st.write(pergjigja.text)
             except Exception as e:
-                # Nëse dështon i pari, provon modelin rezervë
                 try:
+                    # Model rezervë nëse i pari dështon
                     model_backup = genai.GenerativeModel('gemini-pro')
                     pergjigja = model_backup.generate_content(pyetja)
-                    st.success("Përgjigja (nga Backup):")
+                    st.success("Përgjigja (Backup):")
                     st.write(pergjigja.text)
                 except Exception as e2:
                     st.error(f"Gabim teknik: {str(e2)}")
